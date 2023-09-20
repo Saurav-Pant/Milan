@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UpdateUser, Logout } from "../../service/MilanApi";
 import { showSuccessToast } from "../../utils/Toasts";
-import { ClearCookies } from "../../utils/Cookies";
 import { ToastContainer } from "react-toastify";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function UserProfile() {
   document.title = "Milan | User Profile";
@@ -29,7 +29,6 @@ export default function UserProfile() {
     const Data = await Logout();
 
     if (Data?.status === 201) {
-      ClearCookies();
       showSuccessToast(Data?.data?.message);
       setTimeout(() => {
         navigate("/");
@@ -53,6 +52,7 @@ export default function UserProfile() {
 
   return (
     <>
+      <Navbar />
       <ToastContainer />
       <section className="vh-100">
         <div className="container py-5 h-100">
