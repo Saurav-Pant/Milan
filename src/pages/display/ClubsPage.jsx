@@ -130,6 +130,7 @@ const ClubsPage = () => {
               <p className="clubspage_header2">
                 Here are some clubs you can follow. You can attend charity/club
                 events and even get notified about them once you subscribe!
+                Hurray
               </p>
             </div>
           </div>
